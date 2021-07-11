@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <% if(tasks.length==0) { %>
+            <p>No tasks added yet</p>
+    <% } %>
+        <% tasks.forEach(function(task,i){ %>
+        <form action="/edit/<%=task._id %>" method="POST">
+            <input type="text" value="<%=task.item %>" name="item">
+            <button type="submit">Confirm</button>
+            <a href="/" class="cancel">Cancel</a>
+        </form>
+        <% }) %>
+    </body>
+</html>
